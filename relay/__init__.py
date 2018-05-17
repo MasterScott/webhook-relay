@@ -6,18 +6,16 @@ import requests
 import os
 import urllib3
 
-urllib3.disable_warnings()
-
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
-SECRET_KEY = 'development key'
+SECRET_KEY = 'dosentmatter'
 
 app = Flask(__name__, static_url_path='')
 app.config.from_object(__name__)
 
-@app.route('/webhook/relay', methods=['POST'])
-def relay():
+@app.route('/relay/sendgrid-to-slack', methods=['POST'])
+def sendgrid-to-slack():
     webhook_url = '{webhook URL from Slack}'
     text_template = '>>> *From*: {}\n*Subject*: {}\n*Message*:\n\n{}'
     # process the meaningful parts of the Sendgrid webhook push
