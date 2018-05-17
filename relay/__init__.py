@@ -15,7 +15,7 @@ app = Flask(__name__, static_url_path='')
 app.config.from_object(__name__)
 
 @app.route('/relay/sendgrid-to-slack', methods=['POST'])
-def sendgrid-to-slack():
+def sendgrid_to_slack():
     webhook_url = '{webhook URL from Slack}'
     text_template = '>>> *From*: {}\n*Subject*: {}\n*Message*:\n\n{}'
     # process the meaningful parts of the Sendgrid webhook push
